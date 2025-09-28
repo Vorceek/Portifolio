@@ -1,0 +1,209 @@
+/* Body Design */
+
+body {
+    background-color: #090E16;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Design */
+
+header {
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    padding: 10px;
+    
+
+    background-color: #0F1120;
+    color: #87888F;
+}
+
+.header-links {
+    display: flex;
+    gap: 30px;
+    
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #87888F;
+    font-size: 1.2rem;
+}
+
+/* Main - Image */
+
+main {
+    margin-top: 60px;
+}
+
+.main-image-box {
+    display: flex;
+    justify-content: space-around;
+    
+    background-color: #0F1120;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 40px;
+}
+
+.main-image-box img {
+    height: 450px;
+    margin-left: 30px;
+}
+
+.vinicios-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vinicios-nome {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.back-end-text {
+    color: #87888F;
+    font-size: 1rem;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.8); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.social-links a {
+    color: #87888F;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover com efeito glow */
+.social-links a:hover {
+    color: #00acee; /* cor base (pode trocar) */
+    text-shadow: 0 0 10px #00acee, 0 0 20px #00acee, 0 0 40px #00acee;
+}
+
+.vinicios-nome h1 {
+    overflow: hidden;
+    border-right: .15em solid #fff;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation: typing 2s steps(30, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #fff; }
+}
+
+/* Botão hamburguer */
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #87888F;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+     .hamburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #87888F;
+    }
+
+    .header-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* altura do header */
+        left: 0;
+        width: 100%;
+        background-color: #0F1120;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+
+        /* efeito suave */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .header-links a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-links.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* imagem ocupa mais espaço */
+    .main-image-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 20px auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .main-image-box img {
+        width: 100%;
+        max-width: 350px; /* limite pra não estourar */
+        height: auto;
+        margin: 0 auto 20px auto;
+        border-radius: 15px;
+    }
+
+    .vinicios-text {
+        align-items: center;
+    }
+
+    .vinicios-nome h1 {
+        font-size: 1.4rem;
+    }
+
+    .back-end-text h1 {
+        font-size: 1.1rem;
+    }
+}

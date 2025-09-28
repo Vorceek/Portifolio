@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-box">
+            <div class="header-logo">
+                <h2>Logo</h2>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+
+            <div class="header-links" id="menu">
+                <a href="#">Home</a>
+                <a href="#">Sobre Mim</a>
+                <a href="#">Skills</a>
+                <a href="#">Carreira</a>
+                <a href="#">Contato</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="main-image-box">
+            <div class="vinicios-image">
+                <img src="/Vinicios_Foto.png" alt="">
+            </div>
+            <div class="vinicios-text">
+                <span class="vinicios-nome"><h1>Vinicios Mensen</h1></span>
+                <span class="back-end-text"><h1>Back-end developer</h1></span>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/seu-usuario" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+<script>
+function toggleMenu(btn) {
+    document.getElementById("menu").classList.toggle("show");
+    btn.classList.toggle("active");
+}
+
+</script>
+
+</body>
+
+</html>
