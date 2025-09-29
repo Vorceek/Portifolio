@@ -13,6 +13,37 @@ header {
     
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    gap: 30px;
+
+    background-color: #0F1120;
+    border-top: 1px solid #c1abff;
+    color: #87888F;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: #87888F;
+    font-size: 2rem;
+
+}
+
+.footer-content a:hover {
+    color: #7c8ae9;
+    text-shadow: 0 0 5px #3e446b, 0 0 10px #3e446b, 0 0 20px #3e446b;
+}
+
 .header-box {
     display: flex;
     justify-content: space-between;
@@ -98,8 +129,8 @@ main {
 }
 
 .social-links a:hover {
-    color: #00acee;
-    text-shadow: 0 0 10px #00acee, 0 0 20px #00acee, 0 0 40px #00acee;
+    color: #7c8ae9;
+    text-shadow: 0 0 5px #3e446b, 0 0 10px #3e446b, 0 0 20px #3e446b;
 }
 
 .vinicios-nome h1 {
@@ -133,6 +164,7 @@ main {
     justify-items: start;
 }
 
+.projetos-title,
 .habilidades-title {
     display: flex;
     justify-content: center;
@@ -168,6 +200,80 @@ main {
   justify-content: center;
   margin-bottom: 12px;
 }
+
+/* Main - Projetos */
+
+.main-projetos-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    margin-top: 40px;
+
+}
+
+.projetos-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: 500px;
+    gap: 40px;
+    margin-top: 40px;
+
+    
+}
+
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    width: 80%;
+    height: 500px;
+    gap: 20%;
+
+    background-color: #0F1120;
+}
+
+.bottom-container,
+.top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.bottom-container,
+.top-container i {
+    color: #87888F;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+
+    text-decoration: none!important;
+    
+}
+
+.bottom-container,
+.top-container a {
+    color: #87888F;
+    text-decoration: none!important;
+}
+
+.github-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
 
 /* Animações Main Image */
 
@@ -301,4 +407,7 @@ main {
         justify-content: flex-start;
     }
     
+    .projetos-box {
+        flex-direction: column;
+    }
 }
