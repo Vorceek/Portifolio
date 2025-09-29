@@ -34,7 +34,7 @@
     <main>
         <div class="main-image-box">
             <div class="vinicios-image">
-                <img src="/Vinicios_Foto.png" alt="">
+                <img src="images/Vinicios_Foto.png" alt="">
             </div>
             <div class="vinicios-text">
                 <span class="vinicios-nome"><h1>Vinicios Mensen</h1></span>
@@ -51,15 +51,107 @@
 
             </div>
         </div>
+
+        <section id="skills" class="main-habilidades-box" aria-labelledby="skills-title">
+
+            <h1 id="skills-title" class="habilidades-title">Habilidades</h1>
+
+            <div class="habilidades-box">
+                
+                <!-- Coluna 1 -->
+                <div class="habilidades-images-box reveal" data-delay="1">
+                    <h2 class="habilidades-programacao-h2">Programação</h2>
+                    <div class="python-box">
+                        <h2>Python</h2>
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div class="js-box">
+                        <h2>JavaScript</h2>
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <div class="html-box">
+                        <h2>HTML | CSS</h2>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3"></i>
+                    </div>
+                </div>
+                
+                <!-- Coluna 2 -->
+                <div class="habilidades-images-box reveal" data-delay="2">
+                    <h2 class="habilidades-programacao-h2">Banco de Dados</h2>
+                    <div class="postgres-box">
+                        <h2>PostgreSQL</h2>
+                        <img src="icons/icons_postgres.png" alt="">
+                    </div>
+                    <div class="mongo-box">
+                        <h2>MongoDB</h2>
+                        <img src="icons/icons_mongodb.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Coluna 3 -->
+                <div class="habilidades-images-box reveal" data-delay="3">
+                    <h2 class="habilidades-programacao-h2">Frameworks | DevOps</h2>
+                    <div class="fastapi-box">
+                        <h2>FastAPI | Django</h2>
+                        <img src="icons/icons_fastapi.png" alt="">
+                        <img src="icons/icons_django.png" alt="">
+                    </div>
+                    <div class="devops-box">
+                        <h2>Git</h2>
+                        <img src="icons/icons_git.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Coluna 4 -->
+                <div class="habilidades-images-box reveal" data-delay="4">
+                    <h2 class="habilidades-programacao-h2">Outros</h2>
+                    <div class="fastapi-box">
+                        <h2>Django Rest</h2>
+                        <img src="icons/icons_api.png" alt="">
+                    </div>
+                    <div class="sentry-box">
+                        <h2>Sentry</h2>
+                        <img src="icons/icons_sentry.png" alt="">
+                    </div>
+                    <div class="pytest-box">
+                        <h2>Pytest</h2>
+                        <img src="icons/icons_pytest.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
 <script>
 function toggleMenu(btn) {
-    document.getElementById("menu").classList.toggle("show");
-    btn.classList.toggle("active");
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("show");
+  if (btn) btn.classList.toggle("active");
 }
-
 </script>
+
+<script>
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || els.length === 0) {
+    els.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        obs.unobserve(e.target); // anima só uma vez
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+  els.forEach(el => io.observe(el));
+})();
+</script>
+
 
 </body>
 

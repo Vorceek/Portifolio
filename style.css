@@ -26,6 +26,7 @@ header {
 
     background-color: #0F1120;
     color: #87888F;
+    border: 1px solid #c1abff;
 }
 
 .header-links {
@@ -90,20 +91,14 @@ main {
     animation-delay: 1.5s;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px) scale(0.8); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
 .social-links a {
     color: #87888F;
     font-size: 2rem;
     transition: all 0.3s ease;
 }
 
-/* Hover com efeito glow */
 .social-links a:hover {
-    color: #00acee; /* cor base (pode trocar) */
+    color: #00acee;
     text-shadow: 0 0 10px #00acee, 0 0 20px #00acee, 0 0 40px #00acee;
 }
 
@@ -116,6 +111,66 @@ main {
     animation: typing 2s steps(30, end), blink .75s step-end infinite;
 }
 
+/* Main - Skills */
+
+.main-habilidades-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid #c1abff;
+    border-bottom: 1px solid #c1abff;
+    background-color: #0F1120;
+}
+
+.habilidades-box {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    justify-items: start;
+}
+
+.habilidades-title {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.habilidades-images-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-left: 0;   
+}
+
+.habilidades-box i,
+.habilidades-images-box img {
+  font-size: 2rem;
+  height: 2rem;
+  color: #87888F;
+  transition: all .3s ease;
+}
+
+.habilidades-images-box h2 {
+    color: #87888F;
+}
+
+.habilidades-programacao-h2{
+  color: #fff !important;
+  text-align: center;
+  line-height: 1.2;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* Animações Main Image */
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -126,7 +181,31 @@ main {
     50% { border-color: #fff; }
 }
 
-/* Botão hamburguer */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.8); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Animações Main Skills */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(.98);
+  transition: opacity .2s ease, transform .2s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal[data-delay="1"] { transition-delay: .06s; }
+.reveal[data-delay="2"] { transition-delay: .12s; }
+.reveal[data-delay="3"] { transition-delay: .18s; }
+.reveal[data-delay="4"] { transition-delay: .24s; }
+
+/* Mobile */
 
 .hamburger {
     display: none;
@@ -134,8 +213,6 @@ main {
     cursor: pointer;
     color: #87888F;
 }
-
-/* Mobile */
 
 @media (max-width: 768px) {
      .hamburger {
@@ -148,7 +225,7 @@ main {
     .header-links {
         display: none;
         position: absolute;
-        top: 60px; /* altura do header */
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: #0F1120;
@@ -156,13 +233,11 @@ main {
         align-items: center;
         gap: 20px;
         padding: 20px 0;
-
-        /* efeito suave */
         opacity: 0;
         transform: translateY(-10px);
-        transition: all 0.3s ease-in-out;
+        transition: all .3s ease-in-out;
         z-index: 999;
-    }
+  }
 
     .header-links a {
         font-size: 1.1rem;
@@ -177,7 +252,6 @@ main {
         transform: translateY(0);
     }
 
-    /* imagem ocupa mais espaço */
     .main-image-box {
         flex-direction: column;
         align-items: center;
@@ -206,4 +280,25 @@ main {
     .back-end-text h1 {
         font-size: 1.1rem;
     }
+
+    .habilidades-images-box {
+        justify-content: center;
+    }
+
+    .habilidades-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 34px;
+    }
+
+    .main-habilidades-box { margin-top: 40px; padding: 32px 0; }
+
+    .habilidades-programacao-h2{
+        min-height: unset;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
 }
